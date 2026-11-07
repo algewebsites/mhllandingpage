@@ -33,11 +33,11 @@ The quiz already sends two fields to Brevo: `EMAIL` and `SLEEP_TYPE`. `SLEEP_TYP
 
 ## Step 4: Upload the PDFs (happens with Netlify)
 After the site is live, the PDFs are available at:
-- `https://<your-site>.netlify.app/downloads/sleep-reset-wired-mind.pdf`
-- `https://<your-site>.netlify.app/downloads/sleep-reset-late-night-fuel.pdf`
-- `https://<your-site>.netlify.app/downloads/sleep-reset-shifting-clock.pdf`
-- `https://<your-site>.netlify.app/downloads/sleep-reset-steady-sleeper.pdf`
-- Fallback (general reset): `https://<your-site>.netlify.app/downloads/why-you-wake-up-tired-sleep-reset.pdf`
+- `https://healthy-longevity.netlify.app/downloads/sleep-reset-wired-mind.pdf`
+- `https://healthy-longevity.netlify.app/downloads/sleep-reset-late-night-fuel.pdf`
+- `https://healthy-longevity.netlify.app/downloads/sleep-reset-shifting-clock.pdf`
+- `https://healthy-longevity.netlify.app/downloads/sleep-reset-steady-sleeper.pdf`
+- Fallback (general reset): `https://healthy-longevity.netlify.app/downloads/why-you-wake-up-tired-sleep-reset.pdf`
 
 Open each link once in your browser to check it works.
 
@@ -61,7 +61,7 @@ Take the quiz yourself 4 times with your own email (you can use `yourname+wired@
 
 ## The 5 welcome emails
 
-Replace `<your-site>` with your real Netlify address. Sender name: **Alissa | My Healthy Longevity**.
+Sender name: **Alissa | My Healthy Longevity**.
 
 ### 1. The Wired Mind
 **Subject:** Your reset is here, Wired Mind 🌙
@@ -70,7 +70,7 @@ Replace `<your-site>` with your real Netlify address. Sender name: **Alissa | My
 > Hi lovely,
 >
 > here it is: your 1-page sleep reset for **The Wired Mind**.
-> **[Download my sleep reset]** → `https://<your-site>.netlify.app/downloads/sleep-reset-wired-mind.pdf`
+> **[Download my sleep reset]** → `https://healthy-longevity.netlify.app/downloads/sleep-reset-wired-mind.pdf`
 >
 > Quick reminder of what’s going on: you go to bed exhausted, but your nervous system is still on duty. That’s why 8 hours in bed don’t always feel like 8 hours of recovery.
 >
@@ -78,7 +78,7 @@ Replace `<your-site>` with your real Netlify address. Sender name: **Alissa | My
 >
 > Pick one or two tips from the page, not all five. Then just notice how you feel in the morning.
 >
-> And if you’d like to look at your nights together: book your free 30-minute **Better Sleep Call** → `https://<your-site>.netlify.app/#better-sleep-call`
+> And if you’d like to look at your nights together: book your free 30-minute **Better Sleep Call** → `https://healthy-longevity.netlify.app/#better-sleep-call`
 >
 > Sleep well,
 > Alissa
@@ -90,7 +90,7 @@ Replace `<your-site>` with your real Netlify address. Sender name: **Alissa | My
 > Hi lovely,
 >
 > here it is: your 1-page sleep reset for **The Late-Night Fuel**.
-> **[Download my sleep reset]** → `https://<your-site>.netlify.app/downloads/sleep-reset-late-night-fuel.pdf`
+> **[Download my sleep reset]** → `https://healthy-longevity.netlify.app/downloads/sleep-reset-late-night-fuel.pdf`
 >
 > The good news first: this is the type that often changes fastest. Alcohol, late coffee or a late dinner keep your body busy at night, and small changes to your evenings can show up in how you feel within days.
 >
@@ -98,7 +98,7 @@ Replace `<your-site>` with your real Netlify address. Sender name: **Alissa | My
 >
 > Pick one or two tips from the page, not all five. Then just notice how you feel in the morning.
 >
-> Want help making it work with your real life, dinners and weekends included? Book your free 30-minute **Better Sleep Call** → `https://<your-site>.netlify.app/#better-sleep-call`
+> Want help making it work with your real life, dinners and weekends included? Book your free 30-minute **Better Sleep Call** → `https://healthy-longevity.netlify.app/#better-sleep-call`
 >
 > Sleep well,
 > Alissa
@@ -110,7 +110,7 @@ Replace `<your-site>` with your real Netlify address. Sender name: **Alissa | My
 > Hi lovely,
 >
 > here it is: your 1-page sleep reset for **The Shifting Clock**.
-> **[Download my sleep reset]** → `https://<your-site>.netlify.app/downloads/sleep-reset-shifting-clock.pdf`
+> **[Download my sleep reset]** → `https://healthy-longevity.netlify.app/downloads/sleep-reset-shifting-clock.pdf`
 >
 > Your bedtime and wake-up time keep moving, so your body never quite knows when night starts. Your body loves rhythm: give it one fixed point and the rest follows.
 >
@@ -118,7 +118,7 @@ Replace `<your-site>` with your real Netlify address. Sender name: **Alissa | My
 >
 > Pick one or two tips from the page, not all five. Then just notice how you feel in the morning.
 >
-> Want to find a rhythm that survives your actual weekends? Book your free 30-minute **Better Sleep Call** → `https://<your-site>.netlify.app/#better-sleep-call`
+> Want to find a rhythm that survives your actual weekends? Book your free 30-minute **Better Sleep Call** → `https://healthy-longevity.netlify.app/#better-sleep-call`
 >
 > Sleep well,
 > Alissa
@@ -130,7 +130,7 @@ Replace `<your-site>` with your real Netlify address. Sender name: **Alissa | My
 > Hi lovely,
 >
 > here it is: your 1-page sleep reset for **The Steady Sleeper**.
-> **[Download my sleep reset]** → `https://<your-site>.netlify.app/downloads/sleep-reset-steady-sleeper.pdf`
+> **[Download my sleep reset]** → `https://healthy-longevity.netlify.app/downloads/sleep-reset-steady-sleeper.pdf`
 >
 > Your answers didn’t show one big sleep blocker. If you still wake up tired, the reason is often less obvious: stress during the day, your cycle or hormones, or simply needing more sleep than you get.
 >
@@ -138,7 +138,7 @@ Replace `<your-site>` with your real Netlify address. Sender name: **Alissa | My
 >
 > Pick one or two tips from the page, not all five. Then notice which evenings come before your best mornings.
 >
-> If you’d like to find your pattern together: book your free 30-minute **Better Sleep Call** → `https://<your-site>.netlify.app/#better-sleep-call`
+> If you’d like to find your pattern together: book your free 30-minute **Better Sleep Call** → `https://healthy-longevity.netlify.app/#better-sleep-call`
 >
 > Sleep well,
 > Alissa
@@ -150,11 +150,11 @@ Replace `<your-site>` with your real Netlify address. Sender name: **Alissa | My
 > Hi lovely,
 >
 > here it is: your 1-page sleep reset.
-> **[Download my sleep reset]** → `https://<your-site>.netlify.app/downloads/why-you-wake-up-tired-sleep-reset.pdf`
+> **[Download my sleep reset]** → `https://healthy-longevity.netlify.app/downloads/why-you-wake-up-tired-sleep-reset.pdf`
 >
-> Haven’t found your sleep type yet? It takes 60 seconds → `https://<your-site>.netlify.app/sleep-quiz.html`
+> Haven’t found your sleep type yet? It takes 60 seconds → `https://healthy-longevity.netlify.app/sleep-quiz.html`
 >
-> And if you’d like to look at your nights together: book your free 30-minute **Better Sleep Call** → `https://<your-site>.netlify.app/#better-sleep-call`
+> And if you’d like to look at your nights together: book your free 30-minute **Better Sleep Call** → `https://healthy-longevity.netlify.app/#better-sleep-call`
 >
 > Sleep well,
 > Alissa
