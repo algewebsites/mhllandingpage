@@ -1,0 +1,11 @@
+# Build output (Netlify builds it with build-site.sh)
+site/
+
+# Large / duplicate files not needed for the website
+My Healthy Longevity Design System.zip
+/why-you-wake-up-tired-sleep-reset.pdf
+
+# Mac + local tools
+.DS_Store
+.claude/
+__pycache__/

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Wired Mind: Your 1-Page Sleep Reset | My Healthy Longevity</title>
+<style>
+
+@font-face { font-family: 'Figtree'; src: url('../../assets/quiz/fonts/figtree-latin-wght-normal.woff2') format('woff2'); font-weight: 300 900; font-style: normal; }
+@font-face { font-family: 'Figtree'; src: url('../../assets/quiz/fonts/figtree-latin-wght-italic.woff2') format('woff2'); font-weight: 300 900; font-style: italic; }
+@font-face { font-family: 'Instrument Serif'; src: url('../../assets/quiz/fonts/instrument-serif-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Instrument Serif'; src: url('../../assets/quiz/fonts/instrument-serif-latin-400-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; }
+@font-face { font-family: 'Playfair Display'; src: url('../../assets/quiz/fonts/playfair-display-latin-800-normal.woff2') format('woff2'); font-weight: 800; }
+@font-face { font-family: 'Oswald'; src: url('../../assets/quiz/fonts/oswald-latin-wght-normal.woff2') format('woff2'); font-weight: 200 700; }
+
+:root {
+  --sunshine-100: #FFF6CC; --sunshine-300: #FFE680; --sunshine-500: #FFD31A;
+  --linen-0: #FFFFFF; --linen-50: #FBF8F3; --linen-100: #F5EFE6; --linen-200: #EBE2D4; --sand-300: #D9C9AF;
+  --gold-500: #C6A15B; --gold-700: #8E6E33;
+  --ink-900: #15120F; --ink-700: #3A332D; --ink-500: #6E655C; --ink-300: #A79D92;
+  --elegant: 'Instrument Serif', Didot, serif; --statement: 'Playfair Display', Georgia, serif;
+  --sans: 'Figtree', Arial, sans-serif; --label: 'Oswald', 'Arial Narrow', sans-serif;
+}
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font: 400 8.6pt/1.42 var(--sans); color: var(--ink-900); background: var(--linen-50); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 210mm; height: 297mm; padding: 10mm 13mm 8mm; display: flex; flex-direction: column; gap: 3.6mm; overflow: hidden; }
+h1, h2, h3, p, ul, ol { margin: 0; }
+.mark { background: linear-gradient(transparent 14%, var(--sunshine-500) 14%, var(--sunshine-500) 90%, transparent 90%); padding: 0 .1em; }
+.kicker { font: 500 7pt/1 var(--label); letter-spacing: .14em; text-transform: uppercase; color: var(--gold-700); }
+
+/* Header */
+.head { display: grid; grid-template-columns: minmax(0, 1fr) 68mm; gap: 6mm; align-items: start; }
+.brand { display: flex; align-items: center; justify-content: space-between; margin-bottom: 3mm; }
+.wordmark { font: 400 12pt/1 var(--elegant); }
+.wordmark em { color: var(--gold-700); }
+.sticker { display: inline-block; background: var(--linen-0); font: 500 7pt/1 var(--label); letter-spacing: .14em; text-transform: uppercase; padding: 5px 8px; border-radius: 6px; box-shadow: 0 1px 0 rgba(21,18,15,.06), 0 4px 10px rgba(21,18,15,.10); transform: rotate(-2deg); }
+.sticker::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--sunshine-500); box-shadow: 0 0 0 1.5px var(--ink-900); margin-right: 6px; vertical-align: 1px; }
+h1 { font: 400 34pt/0.95 var(--elegant); letter-spacing: -0.02em; }
+h1 .aside { display: block; margin-top: 2mm; font: 800 14pt/1.1 var(--statement); letter-spacing: -0.01em; }
+.intro { margin-top: 2.5mm; font-size: 9.4pt; line-height: 1.45; color: var(--ink-700); max-width: 118mm; }
+
+/* Self-check card */
+.check { background: var(--linen-0); border: 1px solid var(--linen-200); border-radius: 4mm; padding: 3.4mm 4mm; }
+.check h2 { font: 700 10pt/1.2 var(--sans); margin: 1.2mm 0 2mm; }
+.check ul { list-style: none; padding: 0; display: grid; gap: 1.3mm; }
+.check li { display: grid; grid-template-columns: 4mm minmax(0, 1fr); gap: 2mm; font-size: 8pt; line-height: 1.3; }
+.box { width: 3.4mm; height: 3.4mm; border: 1.2px solid var(--ink-900); border-radius: 1mm; margin-top: .3mm; }
+.check .verdict { margin-top: 2mm; padding-top: 1.8mm; border-top: 1px dashed var(--sand-300); font-size: 8pt; color: var(--ink-700); }
+.check .verdict strong { color: var(--ink-900); }
+
+/* Section titles */
+.sec-title { display: flex; align-items: baseline; gap: 3mm; }
+.sec-title h2 { font: 400 17pt/1 var(--elegant); letter-spacing: -0.01em; }
+.sec-title span { color: var(--ink-500); font-size: 8pt; }
+
+/* Reasons grid */
+.reasons { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2.6mm; margin-top: 2.4mm; }
+.reason { background: var(--linen-0); border: 1px solid var(--linen-200); border-radius: 3.5mm; padding: 3.2mm 3.2mm 3mm; display: flex; flex-direction: column; gap: 1.6mm; }
+.reason.doc { background: var(--linen-100); border: 1.2px dashed var(--sand-300); }
+.reason h3 { font: 800 10.4pt/1.1 var(--statement); letter-spacing: -0.005em; }
+.reason p { font-size: 7.7pt; line-height: 1.38; color: var(--ink-700); }
+.reason dl { margin: 0; display: grid; gap: 1.3mm; }
+.reason dt { font: 500 6.3pt/1 var(--label); letter-spacing: .12em; text-transform: uppercase; color: var(--gold-700); }
+.reason dd { margin: .6mm 0 0; font-size: 7.6pt; line-height: 1.33; }
+.reason .try { margin-top: auto; padding-top: 1.6mm; border-top: 1px dashed var(--sand-300); font-size: 7.6pt; font-weight: 600; }
+
+/* Experiment */
+.experiment { display: grid; grid-template-columns: 58mm minmax(0, 1fr); gap: 4.5mm; margin-top: 2.4mm; }
+.pick { display: grid; gap: 1.8mm; align-content: start; }
+.pick p { font-size: 8pt; color: var(--ink-700); }
+.pick ol { list-style: none; padding: 0; display: grid; gap: 1.6mm; }
+.pick li { display: grid; grid-template-columns: 5mm minmax(0, 1fr); gap: 2mm; font-size: 7.8pt; line-height: 1.33; }
+.pick li b { display: block; font-weight: 700; font-size: 8.2pt; }
+.num { width: 4.6mm; height: 4.6mm; border-radius: 50%; background: var(--sunshine-500); display: grid; place-items: center; font: 700 7pt/1 var(--sans); }
+
+table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--linen-0); border: 1px solid var(--linen-200); border-radius: 3.5mm; overflow: hidden; font-size: 7.4pt; }
+th, td { border-bottom: 1px solid var(--linen-200); border-right: 1px solid var(--linen-200); padding: 0 2mm; height: 7mm; text-align: center; }
+th:last-child, td:last-child { border-right: 0; }
+tr:last-child th, tr:last-child td { border-bottom: 0; }
+thead th { height: 6.4mm; background: var(--sunshine-500); font: 500 6.6pt/1 var(--label); letter-spacing: .12em; text-transform: uppercase; }
+tbody th { text-align: left; font-weight: 600; width: 33mm; line-height: 1.2; }
+tbody th small { display: block; font-weight: 400; color: var(--ink-500); font-size: 6.4pt; }
+.experiment-table { display: grid; gap: 1.8mm; align-content: start; }
+.rule { font-size: 7.8pt; color: var(--ink-700); }
+.rule strong { color: var(--ink-900); }
+
+/* Bottom row */
+.bottom { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 4.5mm; }
+.prompt { background: var(--ink-900); color: var(--linen-50); border-radius: 4mm; padding: 3.4mm 4mm; display: grid; gap: 2mm; align-content: start; }
+.prompt .kicker { color: var(--sunshine-500); }
+.prompt h3 { font: 400 14pt/1.05 var(--elegant); }
+.prompt h3 em { color: var(--sunshine-500); }
+.prompt pre { margin: 0; white-space: pre-wrap; font: 400 7.4pt/1.42 var(--sans); color: var(--linen-200); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 2.5mm; padding: 2.6mm 3mm; }
+.prompt p { font-size: 6.9pt; color: var(--ink-300); }
+.doctor { background: var(--linen-100); border: 1.2px dashed var(--sand-300); border-radius: 4mm; padding: 3.4mm 4mm; display: grid; gap: 2mm; align-content: start; }
+.doctor h3 { font: 700 10pt/1.2 var(--sans); }
+.doctor ul { padding-left: 4mm; display: grid; gap: 1.2mm; font-size: 7.8pt; line-height: 1.35; }
+
+.foot { margin-top: auto; display: flex; justify-content: space-between; align-items: end; gap: 6mm; padding-top: 2.6mm; border-top: 1px solid var(--linen-200); }
+.foot .cta { font: 400 12pt/1.15 var(--elegant); }
+.foot .cta b { font-family: var(--sans); font-weight: 700; font-size: 8.4pt; display: block; margin-top: 1mm; }
+.foot .legal { font-size: 6.2pt; color: var(--ink-500); max-width: 64mm; text-align: right; line-height: 1.4; }
+
+
+.page { gap: 3mm; padding-top: 9mm; }
+.head { grid-template-columns: minmax(0, 1fr) 70mm; }
+.check { padding: 3mm 3.6mm; }
+.check li { font-size: 7.6pt; }
+.check h2 { margin: 1mm 0 1.6mm; }
+.check .verdict { margin-top: 1.6mm; padding-top: 1.4mm; }
+.intro { max-width: 112mm; }
+.why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.6mm; }
+.why div { background: var(--linen-0); border: 1px solid var(--linen-200); border-radius: 3.5mm; padding: 3mm 3.4mm; }
+.why dt { font: 500 6.4pt/1 var(--label); letter-spacing: .12em; text-transform: uppercase; color: var(--gold-700); margin-bottom: 1.4mm; }
+.why dd { margin: 0; font-size: 8pt; line-height: 1.38; color: var(--ink-700); }
+.why div:last-child { background: var(--sunshine-100); border-color: var(--sunshine-300); }
+.tips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.6mm; margin-top: 2.4mm; }
+.tip { background: var(--linen-0); border: 1px solid var(--linen-200); border-radius: 3.5mm; padding: 2.6mm 3.2mm; display: grid; grid-template-columns: 5.4mm minmax(0, 1fr); gap: 2mm; align-items: start; }
+.tip .num { width: 5mm; height: 5mm; font-size: 7.4pt; }
+.tip b { display: block; font: 800 9.2pt/1.15 var(--statement); margin-bottom: .9mm; }
+.tip span { font-size: 7.8pt; line-height: 1.36; color: var(--ink-700); }
+.tip.watch { background: var(--ink-900); border-color: var(--ink-900); color: var(--linen-50); grid-template-columns: 1fr; }
+.tip.watch .kicker { color: var(--sunshine-500); }
+.tip.watch p { font-size: 7.8pt; line-height: 1.38; color: var(--linen-200); }
+.tip.watch p strong { color: var(--linen-50); }
+.tracker { display: grid; grid-template-columns: minmax(0, 1fr) 52mm; gap: 4.5mm; align-items: start; margin-top: 2.4mm; }
+.foot .cta b { font-size: 8.2pt; }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="head">
+    <div>
+      <div class="brand"><span class="wordmark">my healthy <em>longevity</em></span></div>
+      <span class="sticker">Your 1-page sleep reset</span>
+      <h1 style="margin-top:3mm">The Wired <span class="mark">Mind</span>
+        <span class="aside">Your body is tired. Your mind didn’t get the memo.</span></h1>
+      <p class="intro">You go to bed exhausted, but your nervous system is still on duty. It replays the day, plans tomorrow and sometimes wakes you at 3 a.m. to do it all again. For you, better sleep starts before your head hits the pillow.</p>
+    </div>
+    <div class="check">
+      <p class="kicker">Sound like you?</p>
+      <h2>Tick what you recognise</h2>
+      <ul>
+        <li><span class="box"></span><span>You feel tired but wired at night</span></li>
+        <li><span class="box"></span><span>Your to-do list starts the second you lie down</span></li>
+        <li><span class="box"></span><span>You wake up between 2 and 4 a.m. and your mind starts working</span></li>
+        <li><span class="box"></span><span>Small noises keep you awake</span></li>
+        <li><span class="box"></span><span>If you track: your resting heart rate runs higher, or your HRV lower, at night</span></li>
+      </ul>
+      <p class="verdict"><strong>2 or more ticks?</strong> Then the tips below are made for you.</p>
+    </div>
+  </header>
+
+  <dl class="why">
+    <div><dt>What’s going on</dt><dd>Stress hormones are still up at bedtime. Your body wants to rest, but your nervous system keeps scanning for things to solve.</dd></div>
+    <div><dt>Feels like</dt><dd>Racing thoughts, replaying conversations, lying awake for ages, light sleep.</dd></div>
+    <div><dt>The good news</dt><dd>A calm, repeated evening routine teaches your nervous system that it’s safe to switch off.</dd></div>
+  </dl>
+
+  <section>
+    <div class="sec-title"><h2>Your tips to sleep better</h2><span>Start tonight. Pick one or two, not all five at once.</span></div>
+    <div class="tips">
+      <div class="tip"><span class="num">1</span><div><b>Screen-free last 2 hours</b><span>No work and no work laptop in the last two hours before bed. Phone out of the bedroom.</span></div></div>
+      <div class="tip"><span class="num">2</span><div><b>Brain dump on paper</b><span>Write tomorrow’s to-do list and whatever is on your mind. Once it’s on paper, your brain can let it go.</span></div></div>
+      <div class="tip"><span class="num">3</span><div><b>10 minutes of slow breathing</b><span>In for 4, out for 6. Longer exhales tell your body it can relax.</span></div></div>
+      <div class="tip"><span class="num">4</span><div><b>Something calm for your brain</b><span>A book, gentle yoga, sound healing, or a calm series on a small screen in night mode. Nothing exciting.</span></div></div>
+      <div class="tip"><span class="num">5</span><div><b>Same routine, same order</b><span>Do your wind-down in the same order every night. Repetition is what makes it work.</span></div></div>
+      <div class="tip watch">
+        <div>
+          <p class="kicker">What to notice</p>
+          <p style="margin-top:1.4mm"><strong>How long it takes you to fall asleep, and how you feel in the morning.</strong></p>
+          <p style="margin-top:1.4mm">Feel first, check second: rate how you feel before you look at any app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title"><h2>Your 7-night check-in</h2><span>Judge by the trend over a week, never by one night.</span></div>
+    <div class="tracker">
+      <table aria-label="7-night check-in">
+        <thead><tr><th style="text-align:left">Night</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr></thead>
+        <tbody>
+          <tr><th>My tips done? ✓</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><th>Morning energy 1–5<small>before you open any app</small></th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><th>Hours slept</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><th>Resting heart rate<small>optional, if you track</small></th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+      <p class="rule"><strong>No wearable? No problem.</strong> How you feel in the morning is the most honest measurement there is. If you do track and your feeling and your score disagree, trust the feeling.</p>
+    </div>
+  </section>
+
+  <section class="bottom">
+    <div class="prompt">
+      <p class="kicker">Bonus: did it work?</p>
+      <h3>Ask your AI <em>after night 7.</em></h3>
+<pre>Here are my 7 nights: [paste your check-in or a screenshot of your app’s weekly view, without your name]. My sleep type is The Wired Mind and I tried [your tips]. Compare nights 1–3 with nights 5–7. Did my morning energy, sleep or resting heart rate change? Explain it simply, and don’t diagnose anything.</pre>
+      <p>Works with ChatGPT, Claude, Gemini or your wearable’s own AI assistant.</p>
+    </div>
+    <div class="doctor">
+      <p class="kicker">Please don’t skip this</p>
+      <h3>Talk to a doctor if…</h3>
+      <ul>
+        <li>you snore loudly, gasp, or someone has noticed breathing pauses</li>
+        <li>you’ve slept badly at least 3 nights a week for 3 months or more</li>
+        <li>you’re exhausted no matter what you change, or feel low most days</li>
+        <li>your sleep changed with perimenopause and it’s affecting your life</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p class="cta">Want help with your sleep, one on one?<b>Book your free Better Sleep Call: link in bio @myhealthylongevity, or simply reply to my email.</b></p>
+    <p class="legal">© 2026 My Healthy Longevity. For education and self-awareness only. This is not medical advice and doesn’t replace a diagnosis or treatment by a doctor.</p>
+  </footer>
+</div>
+</body>
+</html>
