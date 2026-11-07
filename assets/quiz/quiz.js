@@ -334,6 +334,11 @@
     if (form) form.setAttribute('data-sleep-type', r.name);
     var typeField = $('#reset-type');
     if (typeField) typeField.value = r.name;
+    var dl = $('#reset-download');
+    if (dl) {
+      var slug = r.name.toLowerCase().replace(/^the\s+/, '').replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
+      dl.setAttribute('href', 'downloads/sleep-reset-' + slug + '.pdf');
+    }
   }
 
   // Show the screen first: an element inside a hidden screen can't take focus.
@@ -367,7 +372,7 @@
         return;
       }
       if (!consent.checked) {
-        msg.textContent = 'Please tick the box so I’m allowed to send you the reset.';
+        msg.textContent = 'Please tick the box so I’m allowed to save your email.';
         msg.classList.add('err');
         consent.focus();
         return;

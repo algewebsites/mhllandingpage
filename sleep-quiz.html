@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#FBF8F3">
 <link rel="preload" href="assets/quiz/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/quiz/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/quiz/quiz.css?v=2">
+<link rel="stylesheet" href="assets/quiz/quiz.css?v=3">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -99,7 +99,7 @@
 
     <div class="signup">
       <p class="card-kicker">Free 1-page reset</p>
-      <h3>Get your personal reset, <em>straight to your inbox.</em></h3>
+      <h3>Get your personal reset, <em>free to download.</em></h3>
       <ul class="signup-list">
         <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>A 1-page reset made for your sleep type</span></li>
         <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>5 simple tips you can start tonight, plus a 7-night check-in</span></li>
@@ -119,15 +119,16 @@
         <input type="hidden" name="locale" value="en">
         <input type="hidden" name="SLEEP_TYPE" id="reset-type" value="">
         <label class="consent" for="reset-consent"><input id="reset-consent" type="checkbox" name="OPT_IN" value="1" required>
-          <span>Yes, send me the 1-page reset for my sleep type and my weekly My Healthy Longevity emails. My email and sleep type are saved for this. I can unsubscribe at any time. <a href="privacy.html" target="_blank" rel="noopener">Privacy policy</a>.</span></label>
+          <span>Yes, I’d like the 1-page reset for my sleep type and my weekly My Healthy Longevity emails. My email and sleep type are saved for this. I can unsubscribe at any time. <a href="privacy.html" target="_blank" rel="noopener">Privacy policy</a>.</span></label>
         <div class="field-row">
-          <button class="btn btn-sunshine" type="submit">Send me the reset</button>
+          <button class="btn btn-sunshine" type="submit">Get my reset</button>
         </div>
         <p class="form-msg" id="reset-msg" role="status" aria-live="polite"></p>
       </form>
       <div class="success" id="reset-success" tabindex="-1" hidden>
-        <strong>Check your inbox, babe.</strong>
-        <p>Confirm your email with one click, and your 1-page reset is on its way. Can’t find it? Have a look in your spam folder.</p>
+        <strong>Here’s your reset, babe.</strong>
+        <a class="btn btn-sunshine" id="reset-download" href="downloads/why-you-wake-up-tired-sleep-reset.pdf" target="_blank" rel="noopener">Download my sleep reset</a>
+        <p>One more thing: please confirm your email in the message I just sent you, so you get my weekly tips. Can’t find it? Have a look in your spam folder.</p>
       </div>
       <p class="privacy">Your quiz answers are never sent anywhere. Only your email and sleep type are saved, and only if you sign up.</p>
     </div>
@@ -165,6 +166,6 @@
   </nav>
 </footer>
 
-<script src="assets/quiz/quiz.js?v=3" defer></script>
+<script src="assets/quiz/quiz.js?v=4" defer></script>
 </body>
 </html>
