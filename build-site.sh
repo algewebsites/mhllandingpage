@@ -9,7 +9,7 @@ rm -rf site
 mkdir -p site/assets/quiz/fonts site/downloads
 
 # Pages
-cp index.html sleep-quiz.html thanks.html site/
+cp index.html sleep-quiz.html thanks.html imprint.html privacy.html site/
 
 # Landing page assets
 cp assets/styles.css assets/main.js assets/favicon-koralle.png site/assets/

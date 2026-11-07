@@ -366,3 +366,25 @@ fieldset{border:0;padding:0;margin:0 0 16px}
   .header .btn-sm{padding:0 14px;font-size:13.5px}
   .quiz-types div{font-size:19px;padding:14px}
 }
+
+/* ---------- Legal pages (imprint, privacy) ---------- */
+.legal-head{padding:22px 0;border-bottom:1px solid var(--linen-200)}
+.legal-head .container{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.legal-head .back{font-size:14.5px;color:var(--gold-700);text-decoration:none;font-weight:600}
+.legal{padding:clamp(48px,7vw,88px) 0}
+.legal .container{max-width:760px}
+.legal h1{font-size:clamp(40px,6vw,60px);line-height:1.02}
+.legal .updated{margin-top:12px;font-size:14px;color:var(--ink-500)}
+.legal h2{font-size:clamp(26px,3.4vw,32px);line-height:1.1;margin:44px 0 12px}
+.legal h3{font-size:17px;margin:26px 0 6px}
+.legal p,.legal li{font-size:16px;line-height:1.65}
+.legal p{margin:10px 0}
+.legal ul{padding-left:20px;margin:10px 0}
+.legal li{margin:4px 0}
+.legal a{color:var(--gold-700)}
+.legal address{font-style:normal;line-height:1.65}
+.legal-card{background:var(--linen-0);border:1px solid var(--linen-200);border-radius:var(--radius-lg);padding:24px 26px;margin-top:28px;box-shadow:var(--shadow-soft)}
+.legal-card p{margin:0}
+.legal-card p+p{margin-top:14px}
+.legal-card strong{color:var(--ink-900)}
+.legal-toc{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:22px;font-size:14.5px}
