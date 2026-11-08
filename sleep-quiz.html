@@ -14,7 +14,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/quiz/quiz.css?v=3">
+<link rel="stylesheet" href="assets/quiz/quiz.css?v=4">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -45,7 +45,7 @@
     </div>
     <ul class="trust">
       <li><svg aria-hidden="true"><use href="#i-check"/></svg>9 questions, about 60 seconds</li>
-      <li><svg aria-hidden="true"><use href="#i-check"/></svg>Your result right away, no email needed</li>
+      <li><svg aria-hidden="true"><use href="#i-check"/></svg>Your result + a free 1-page reset by email</li>
       <li><svg aria-hidden="true"><use href="#i-check"/></svg>Your answers stay on your device</li>
     </ul>
     <div class="types" aria-label="The sleep types">
@@ -75,6 +75,61 @@
     </div>
   </section>
 
+  <!-- ============ GATE: email before result ============ -->
+  <section class="screen gate" id="screen-gate" hidden aria-labelledby="gate-title">
+    <div class="signup">
+      <p class="card-kicker">Your result is ready</p>
+      <h3 id="gate-title" tabindex="-1" data-focus>Where should I send <em>your sleep type?</em></h3>
+      <ul class="signup-list">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Your sleep type and what it means for you</span></li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>A free 1-page reset made for your type, with 5 tips you can start tonight</span></li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>My weekly emails with simple tips for better sleep and healthy longevity</span></li>
+      </ul>
+      <!--
+        BREVO: Contacts → Forms → create a subscription form with double opt-in (e.g. "Sleep Reset") →
+        Share → Embed → copy the form action URL (https://….sibforms.com/serve/…) and paste it into
+        data-brevo-action below. Keep the fields EMAIL and OPT_IN in the Brevo form.
+      -->
+      <form id="reset-form" data-brevo-action="https://d79809d5.sibforms.com/serve/MUIFAMLnSzgpgjSyEcC4_NKOMoKVUOi3cZYv1-2gtoK0g92aIQLgSq-VYtdperabI7ahYi4RNrPIijJIBecKUvEq9640LvqNwJeYFNondSkWoJ79Ccu3YQiBHPw3BTwEHQ016n2T-0P6oVDeTc5X8gI0xO86PeIGrYM4j2-eEp5zGaOQyK7tQNeKdyXdm0mTgG8G5sMflIjH8bJe" novalidate>
+        <label for="reset-email" class="skip">Email address</label>
+        <div class="field-row">
+          <input id="reset-email" type="email" name="EMAIL" placeholder="Your email address" autocomplete="email" required>
+        </div>
+        <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <input type="hidden" name="locale" value="en">
+        <input type="hidden" name="SLEEP_TYPE" id="reset-type" value="">
+        <label class="consent" for="reset-consent"><input id="reset-consent" type="checkbox" name="OPT_IN" value="1" required>
+          <span>Yes, send me my sleep type result, the 1-page reset and my weekly My Healthy Longevity emails. My email and sleep type are saved for this. I can unsubscribe at any time. <a href="privacy.html" target="_blank" rel="noopener">Privacy policy</a>.</span></label>
+        <div class="field-row">
+          <button class="btn btn-sunshine" type="submit">Send me my result</button>
+        </div>
+        <p class="form-msg" id="reset-msg" role="status" aria-live="polite"></p>
+      </form>
+      <p class="privacy">Your quiz answers stay on your device. Only your email and sleep type are saved.</p>
+    </div>
+  </section>
+
+  <!-- ============ CHECK INBOX ============ -->
+  <section class="screen gate" id="screen-check" hidden aria-labelledby="check-title">
+    <div class="signup">
+      <p class="card-kicker">Almost there</p>
+      <h3 id="check-title" tabindex="-1" data-focus>Check your inbox <em>to unlock your result.</em></h3>
+      <p class="gate-text">I just sent an email to <strong id="check-email">you</strong>. Click the button inside to confirm, and your sleep type and your 1-page reset open right away.</p>
+      <p class="gate-text small">Nothing there after a minute? Have a look in your spam or promotions folder.</p>
+      <button class="btn btn-ghost on-dark" id="check-retry" type="button">Wrong email? Try again</button>
+    </div>
+  </section>
+
+  <!-- ============ CONFIRMED, BUT RESULT IS ON ANOTHER DEVICE ============ -->
+  <section class="screen gate" id="screen-welcome" hidden aria-labelledby="welcome-title">
+    <div class="signup">
+      <p class="card-kicker">You’re in</p>
+      <h3 id="welcome-title" tabindex="-1" data-focus>Thank you for confirming. <em>Your result is on its way.</em></h3>
+      <p class="gate-text">I’ve just sent you one more email with a link to your sleep type and your 1-page reset. It should be in your inbox in a minute.</p>
+      <button class="btn btn-sunshine" id="welcome-retake" type="button">Or take the test again here</button>
+    </div>
+  </section>
+
   <!-- ============ RESULT ============ -->
   <section class="screen result" id="screen-result" hidden aria-labelledby="r-name">
     <div>
@@ -100,40 +155,14 @@
       </div>
     </div>
 
-    <div class="signup">
-      <p class="card-kicker">Free 1-page reset</p>
-      <h3>Get your personal reset, <em>free to download.</em></h3>
+    <div class="signup" id="reset-card">
+      <p class="card-kicker">Your free 1-page reset</p>
+      <h3>Here’s your reset, <em>made for your sleep type.</em></h3>
       <ul class="signup-list">
-        <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>A 1-page reset made for your sleep type</span></li>
         <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>5 simple tips you can start tonight, plus a 7-night check-in</span></li>
         <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>A bonus AI prompt to check if your new routine worked</span></li>
       </ul>
-      <!--
-        BREVO: Contacts → Forms → create a subscription form with double opt-in (e.g. "Sleep Reset") →
-        Share → Embed → copy the form action URL (https://….sibforms.com/serve/…) and paste it into
-        data-brevo-action below. Keep the fields EMAIL and OPT_IN in the Brevo form.
-      -->
-      <form id="reset-form" data-brevo-action="https://d79809d5.sibforms.com/serve/MUIFAMLnSzgpgjSyEcC4_NKOMoKVUOi3cZYv1-2gtoK0g92aIQLgSq-VYtdperabI7ahYi4RNrPIijJIBecKUvEq9640LvqNwJeYFNondSkWoJ79Ccu3YQiBHPw3BTwEHQ016n2T-0P6oVDeTc5X8gI0xO86PeIGrYM4j2-eEp5zGaOQyK7tQNeKdyXdm0mTgG8G5sMflIjH8bJe" novalidate>
-        <label for="reset-email" class="skip">Email address</label>
-        <div class="field-row">
-          <input id="reset-email" type="email" name="EMAIL" placeholder="Your email address" autocomplete="email" required>
-        </div>
-        <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
-        <input type="hidden" name="locale" value="en">
-        <input type="hidden" name="SLEEP_TYPE" id="reset-type" value="">
-        <label class="consent" for="reset-consent"><input id="reset-consent" type="checkbox" name="OPT_IN" value="1" required>
-          <span>Yes, I’d like the 1-page reset for my sleep type and my weekly My Healthy Longevity emails. My email and sleep type are saved for this. I can unsubscribe at any time. <a href="privacy.html" target="_blank" rel="noopener">Privacy policy</a>.</span></label>
-        <div class="field-row">
-          <button class="btn btn-sunshine" type="submit">Get my reset</button>
-        </div>
-        <p class="form-msg" id="reset-msg" role="status" aria-live="polite"></p>
-      </form>
-      <div class="success" id="reset-success" tabindex="-1" hidden>
-        <strong>Here’s your reset, babe.</strong>
-        <a class="btn btn-sunshine" id="reset-download" href="downloads/why-you-wake-up-tired-sleep-reset.pdf" target="_blank" rel="noopener">Download my sleep reset</a>
-        <p>One more thing: please confirm your email in the message I just sent you, so you get my weekly tips. Can’t find it? Have a look in your spam folder.</p>
-      </div>
-      <p class="privacy">Your quiz answers are never sent anywhere. Only your email and sleep type are saved, and only if you sign up.</p>
+      <a class="btn btn-sunshine dl-btn" id="reset-download" href="downloads/why-you-wake-up-tired-sleep-reset.pdf" target="_blank" rel="noopener">Download my sleep reset</a>
     </div>
 
     <aside class="coach" aria-labelledby="coach-title">
@@ -169,6 +198,6 @@
   </nav>
 </footer>
 
-<script src="assets/quiz/quiz.js?v=4" defer></script>
+<script src="assets/quiz/quiz.js?v=5" defer></script>
 </body>
 </html>

@@ -10,3 +10,6 @@ My Healthy Longevity Design System.zip
 .claude/
 __pycache__/
 favicon-preview.html
+reel/*.mp4
+reel/*.jpg
+reel/*.png

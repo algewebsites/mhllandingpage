@@ -1,6 +1,8 @@
 /* My Healthy Longevity – "Why do you wake up tired?" sleep quiz
    Answers are scored in the browser and never sent anywhere.
-   Only the email (and consent) goes to Brevo when someone asks for the 1-page reset. */
+   Flow: questions → email gate (Brevo double opt-in) → the confirmation link brings people back to
+   sleep-quiz.html?confirmed=1, which shows the result saved on this device (localStorage).
+   If they confirm on another device, Brevo's final email links to sleep-quiz.html?type=<sleep type>. */
 (function () {
   'use strict';
 
@@ -183,8 +185,31 @@
   var screens = {
     intro: $('#screen-intro'),
     question: $('#screen-question'),
+    gate: $('#screen-gate'),
+    check: $('#screen-check'),
+    welcome: $('#screen-welcome'),
     result: $('#screen-result')
   };
+  var STORE = 'mhl-sleep-result';
+  function saveResult(s) {
+    try { localStorage.setItem(STORE, JSON.stringify({ type: s.type, doctor: s.doctor, wearable: s.wearable })); } catch (e) {}
+  }
+  function loadResult() {
+    try {
+      var d = JSON.parse(localStorage.getItem(STORE) || 'null');
+      if (d && RESULTS[d.type]) return { type: d.type, doctor: d.doctor || [], wearable: d.wearable !== false };
+    } catch (e) {}
+    return null;
+  }
+  // Accepts "W", "wired-mind", "The Wired Mind", "The+Wired+Mind" …
+  function typeFromParam(v) {
+    if (!v) return null;
+    var norm = function (x) { return x.toLowerCase().replace(/\+/g, ' ').replace(/^the\s+/, '').replace(/[^a-z]+/g, ''); };
+    var n = norm(v);
+    var hit = null;
+    Object.keys(RESULTS).forEach(function (k) { if (k.toLowerCase() === n || norm(RESULTS[k].name) === n) hit = k; });
+    return hit;
+  }
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function show(name) {
@@ -233,7 +258,7 @@
       input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); choose(i); } });
     });
     qBack.hidden = current === 0;
-    qNext.textContent = current === QUESTIONS.length - 1 ? 'See my result' : 'Next';
+    qNext.textContent = current === QUESTIONS.length - 1 ? 'Get my result' : 'Next';
     updateNext();
     var first = qOptions.querySelector('input:checked') || qOptions.querySelector('input');
     if (first) first.focus({ preventScroll: true });
@@ -260,8 +285,11 @@
         renderQuestion();
       } else {
         qBar.style.width = '100%';
-        renderResult();
-        show('result');
+        var s = score();
+        saveResult(s);
+        var typeField = $('#reset-type');
+        if (typeField) typeField.value = RESULTS[s.type].name;
+        show('gate');
       }
     }, reduceMotion ? 0 : 260);
   }
@@ -290,8 +318,7 @@
   }
 
   /* ---------- Result screen ---------- */
-  function renderResult() {
-    var s = score();
+  function renderResult(s) {
     var r = RESULTS[s.type];
     $('#r-name').textContent = r.name;
     $('#r-headline').textContent = r.headline;
@@ -330,10 +357,6 @@
     var coachCta = $('#coach-cta');
     if (coachCta) coachCta.setAttribute('href', 'index.html?type=' + encodeURIComponent(r.name) + '#better-sleep-call');
 
-    var form = $('#reset-form');
-    if (form) form.setAttribute('data-sleep-type', r.name);
-    var typeField = $('#reset-type');
-    if (typeField) typeField.value = r.name;
     var dl = $('#reset-download');
     if (dl) {
       var slug = r.name.toLowerCase().replace(/^the\s+/, '').replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
@@ -347,18 +370,30 @@
     show('question');
     renderQuestion();
   });
-  $('#retake').addEventListener('click', function () {
+  function restart() {
     answers = new Array(QUESTIONS.length);
     current = 0;
+    if (window.history && history.replaceState) history.replaceState(null, '', location.pathname);
     show('question');
     renderQuestion();
+  }
+  $('#retake').addEventListener('click', restart);
+  $('#welcome-retake').addEventListener('click', restart);
+  $('#check-retry').addEventListener('click', function () {
+    var f = $('#reset-form');
+    f.hidden = false;
+    show('gate');
   });
+
+  function showCheck(addr) {
+    $('#check-email').textContent = addr;
+    show('check');
+  }
 
   /* ---------- Brevo signup (double opt-in) ---------- */
   var form = $('#reset-form');
   if (form) {
     var msg = $('#reset-msg');
-    var success = $('#reset-success');
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
       msg.textContent = '';
@@ -390,9 +425,7 @@
         .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); })
         .then(function (d) {
           if (d && d.success) {
-            form.hidden = true;
-            success.hidden = false;
-            success.focus();
+            showCheck(email.value);
           } else {
             throw new Error('Brevo did not confirm');
           }
@@ -403,9 +436,7 @@
           form.setAttribute('method', 'POST');
           form.setAttribute('target', '_blank');
           HTMLFormElement.prototype.submit.call(form);
-          form.hidden = true;
-          success.hidden = false;
-          success.focus();
+          showCheck(email.value);
         })
         .finally(function () {
           btn.disabled = false;
@@ -413,6 +444,20 @@
         });
     });
   }
+
+  /* ---------- Coming back from the confirmation email ---------- */
+  (function () {
+    var params = new URLSearchParams(location.search);
+    var fromLink = typeFromParam(params.get('type'));
+    var confirmed = params.get('confirmed') === '1';
+    if (!fromLink && !confirmed) return;
+    var saved = loadResult();
+    var s = null;
+    if (fromLink) s = (saved && saved.type === fromLink) ? saved : { type: fromLink, doctor: [], wearable: true };
+    else if (saved) s = saved;
+    if (s) { renderResult(s); show('result'); }
+    else show('welcome');
+  })();
 
   var y = $('#year');
   if (y) y.textContent = new Date().getFullYear();

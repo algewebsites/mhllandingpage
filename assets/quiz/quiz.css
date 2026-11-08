@@ -260,3 +260,12 @@ fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Email gate before the result */
+.gate .signup { margin-top: var(--space-4); }
+.gate-text { margin: 0; color: var(--linen-200); font-size: 16px; line-height: 1.55; }
+.gate-text strong { color: var(--linen-50); word-break: break-all; }
+.gate-text.small { font-size: 14px; color: var(--ink-300); }
+.btn.on-dark { color: var(--linen-200); justify-self: start; padding-left: 0; }
+.signup .dl-btn, .gate .btn-sunshine { justify-self: start; }
+.btn-ghost.on-dark:hover { background: transparent; border-color: transparent; color: var(--sunshine-300); }
