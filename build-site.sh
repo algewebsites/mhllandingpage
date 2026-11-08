@@ -12,7 +12,7 @@ mkdir -p site/assets/quiz/fonts site/downloads
 cp index.html sleep-quiz.html thanks.html imprint.html privacy.html links.html site/
 
 # Landing page assets
-cp assets/styles.css assets/main.js assets/favicon-koralle.png site/assets/
+cp assets/styles.css assets/main.js assets/favicon.svg assets/favicon-32.png assets/apple-touch-icon.png site/assets/
 
 # Quiz assets, photos and fonts
 cp assets/quiz/quiz.css assets/quiz/quiz.js assets/quiz/*.jpg site/assets/quiz/
